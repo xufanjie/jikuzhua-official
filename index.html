@@ -1,0 +1,954 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>极酷爪 Paw Scoool | 上海宠物活动·训犬师培训·宠物行为训练</title>
+  <meta name="description" content="极酷爪 Paw Scoool 专注于上海宠物活动与家庭宠物服务。提供充满乐趣的周末线下追逐赛事（库尔辛/luring coursing）、国家一级宠物驯导师坐镇的专业训犬师培训（适合白领兼职），以及深入宠物心理与行为的人宠亲子课堂，全方位提升人宠亲密关系。">
+  <meta name="keywords" content="宠物活动,上海宠物活动,上海周末活动,库尔辛,luring coursing,宠物行为训练,训犬师培训,白领兼职,宠物行为,宠物心理">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#299cee">
+  
+  <style>
+    :root {
+      --bg: #f4f8fb;
+      --text-main: #2c4154;
+      --text-muted: #6b849b;
+      --brand-blue: #299cee;
+      --brand-dark: #166aa4;
+      --brand-yellow: #ffcf33;
+      --brand-orange: #ffa826;
+      --white: #ffffff;
+      --radius-sm: 12px;
+      --radius-md: 24px;
+      --radius-lg: 36px;
+      --shadow-soft: 0 8px 30px rgba(22, 106, 164, 0.06);
+      --shadow-hover: 0 16px 40px rgba(41, 156, 238, 0.15);
+      --font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.6;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(41, 156, 238, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 30%, rgba(255, 207, 51, 0.08) 0%, transparent 30%);
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    /* 狗狗背景装饰图案 */
+    .bg-decoration {
+      position: fixed;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.03;
+    }
+    .bg-paw-1 {
+      top: 15%;
+      left: 5%;
+      width: 150px;
+    }
+    .bg-paw-2 {
+      bottom: 20%;
+      right: 5%;
+      width: 200px;
+      transform: rotate(25deg);
+    }
+    .bg-paw-3 {
+      top: 50%;
+      left: 80%;
+      width: 120px;
+      transform: rotate(-15deg);
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    .container {
+      width: min(1200px, 92vw);
+      margin: 0 auto;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 16px;
+      z-index: 1000;
+      width: min(1200px, 96vw);
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      border-radius: 999px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .nav-brand img {
+      height: 40px; /* Adjust as needed */
+      object-fit: contain;
+      border-radius: 4px; /* Slight roundness just in case */
+    }
+    .nav-brand span {
+       font-size: 1.25rem;
+       font-weight: 800;
+       color: var(--brand-dark);
+       letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      white-space: nowrap; /* 防止文字换行 */
+    }
+
+    .nav-links a {
+      font-weight: 600;
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: 999px;
+      transition: all 0.3s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      background: var(--brand-yellow);
+      color: var(--brand-dark);
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-top: 20px;
+      padding: 40px 0;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, var(--brand-dark), var(--brand-blue));
+      border-radius: var(--radius-lg);
+      padding: 80px 40px;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+    
+    /* Using the new high-res image for the hero background, blended */
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url("活动现场图.jpg") center/cover no-repeat;
+      opacity: 0.25;
+      mix-blend-mode: overlay;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      margin-bottom: 20px;
+      line-height: 1.25;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      opacity: 0.95;
+      line-height: 1.8;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--brand-yellow);
+      color: var(--brand-dark);
+      box-shadow: 0 8px 20px rgba(255, 207, 51, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(255, 207, 51, 0.6);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(4px);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Section Global */
+    section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--brand-dark);
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .section-title::before, .section-title::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 4px;
+      background: var(--brand-yellow);
+      border-radius: 2px;
+    }
+
+    /* 模块：线下赛事 */
+    .event-showcase {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 40px;
+    }
+
+    .event-info h3 {
+      font-size: 1.8rem;
+      color: var(--brand-blue);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    /* Removed emoji from h3 before */
+
+    .event-features {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .feature-item {
+      background: var(--bg);
+      padding: 20px;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--brand-orange);
+    }
+
+    .feature-item h4 {
+      font-size: 1.1rem;
+      color: var(--brand-dark);
+      margin-bottom: 8px;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* 视频展示区：自适应原视频高度，PC端并排，移动端上下排布 */
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .video-box {
+      width: 100%;
+      background: #000;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .video-box video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* 保证等比例缩放且不被裁切 */
+      display: block; /* 消除底部空隙 */
+    }
+    .video-box span {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      backdrop-filter: blur(4px);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* 图片滑动展示区：露出部分前后图 */
+    .image-scroll-wrapper {
+      width: 100%;
+      margin-top: 16px;
+      position: relative;
+    }
+    .image-scroll-container {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 16px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      scroll-behavior: smooth;
+    }
+    .image-scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* 两端的留白，确保第一张和最后一张居中时能对齐 */
+    .image-scroll-container::before,
+    .image-scroll-container::after {
+      content: '';
+      flex: 0 0 2%; 
+    }
+
+    .image-box {
+      flex: 0 0 85%; /* 占据 85% 宽度，左右各漏出部分 */
+      max-width: 320px;
+      aspect-ratio: 4 / 5; /* 适合展示竖版照片 */
+      background: #e8f1f8;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      scroll-snap-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0; left: 0;
+      transition: transform 0.5s;
+    }
+    .image-box:hover img {
+      transform: scale(1.05);
+    }
+    .image-box span {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      z-index: 1;
+      background: rgba(255,255,255,0.9);
+      padding: 6px 16px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    /* 轮播点指示器 */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(41, 156, 238, 0.3);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .dot.active {
+      background: var(--brand-blue);
+      width: 16px;
+      border-radius: 4px;
+    }
+
+    /* 服务模块 (培训与亲子课堂) */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.3s;
+      border-top: 6px solid var(--brand-blue);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-top-color: var(--brand-yellow);
+    }
+
+    .service-card h3 {
+      font-size: 1.6rem;
+      color: var(--brand-dark);
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(41, 156, 238, 0.1);
+      color: var(--brand-blue);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      margin-right: 8px;
+    }
+
+    .tag.yellow {
+      background: rgba(255, 207, 51, 0.2);
+      color: #b07e00;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .highlight-box {
+      background: #fdfaf2;
+      border: 1px solid #fde7a8;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      color: #8c6a0c;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--white);
+      padding: 60px 0 40px;
+      margin-top: 40px;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .footer-content {
+      text-align: center;
+    }
+    
+    .footer-content h2 {
+      color: var(--brand-dark);
+      margin-bottom: 16px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .contact-info div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    /* 微信二维码区域 */
+    .qr-code-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      background: #fdfdfd;
+      padding: 20px;
+      border-radius: var(--radius-sm);
+      border: 1px dashed #e2e8f0;
+    }
+    .qr-placeholder {
+      width: 120px;
+      height: 120px;
+      background: #f0f4f8;
+      border: 1px solid #d1e0ec;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      color: var(--brand-blue);
+      font-size: 2rem;
+    }
+    .qr-code-section p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .copyright {
+      color: #a0b2c2;
+      font-size: 0.9rem;
+      text-align: center;
+      width: 100%;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #f0f4f8;
+    }
+
+    /* 轮播点指示器 */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(41, 156, 238, 0.3);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .dot.active {
+      background: var(--brand-blue);
+      width: 16px;
+      border-radius: 4px;
+    }
+
+    /* 轮播点指示器 */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(41, 156, 238, 0.3);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .dot.active {
+      background: var(--brand-blue);
+      width: 16px;
+      border-radius: 4px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 900px) {
+      .event-showcase, .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .media-placeholder {
+        grid-template-columns: 1fr;
+      }
+      .media-box.video {
+        grid-column: span 1;
+      }
+      .video-grid {
+        grid-template-columns: 1fr; /* 移动端视频上下排布 */
+      }
+    }
+
+    @media (max-width: 850px) {
+      .navbar {
+        padding: 8px 16px;
+      }
+      .nav-brand span { font-size: 1.1rem; }
+      .nav-brand img { height: 32px; }
+      .nav-links { gap: 6px; }
+      .nav-links a { padding: 6px 10px; font-size: 0.95rem; }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+        border-radius: 20px;
+      }
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: nowrap; /* 不换行 */
+        overflow-x: auto; /* 允许横向滚动 */
+        padding-bottom: 4px;
+        scrollbar-width: none; /* Firefox */
+      }
+      .nav-links::-webkit-scrollbar { display: none; /* Safari and Chrome */ }
+      .nav-links a {
+        padding: 4px 8px;
+        font-size: 0.9rem;
+      }
+      .hero-card {
+        padding: 40px 20px;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .event-showcase {
+        padding: 24px;
+      }
+      .service-card {
+        padding: 24px;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .contact-info {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 狗狗背景装饰 (爪印 SVG) -->
+  <svg class="bg-decoration bg-paw-1" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M256 224c-53.02 0-96 50.14-96 112s42.98 112 96 112 96-50.14 96-112-42.98-112-96-112zm-123.6-70.8c-39.76 0-72-35.82-72-80s32.24-80 72-80 72 35.82 72 80-32.24 80-72 80zm247.2 0c-39.76 0-72-35.82-72-80s32.24-80 72-80 72 35.82 72 80-32.24 80-72 80zM128.5 256c-35.35 0-64 31.34-64 70s28.65 70 64 70 64-31.34 64-70-28.65-70-64-70zm255 0c-35.35 0-64 31.34-64 70s28.65 70 64 70 64-31.34 64-70-28.65-70-64-70z"/>
+  </svg>
+  <svg class="bg-decoration bg-paw-2" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M256 224c-53.02 0-96 50.14-96 112s42.98 112 96 112 96-50.14 96-112-42.98-112-96-112zm-123.6-70.8c-39.76 0-72-35.82-72-80s32.24-80 72-80 72 35.82 72 80-32.24 80-72 80zm247.2 0c-39.76 0-72-35.82-72-80s32.24-80 72-80 72 35.82 72 80-32.24 80-72 80zM128.5 256c-35.35 0-64 31.34-64 70s28.65 70 64 70 64-31.34 64-70-28.65-70-64-70zm255 0c-35.35 0-64 31.34-64 70s28.65 70 64 70 64-31.34 64-70-28.65-70-64-70z"/>
+  </svg>
+  <svg class="bg-decoration bg-paw-3" viewBox="0 0 512 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M256 224c-53.02 0-96 50.14-96 112s42.98 112 96 112 96-50.14 96-112-42.98-112-96-112zm-123.6-70.8c-39.76 0-72-35.82-72-80s32.24-80 72-80 72 35.82 72 80-32.24 80-72 80zm247.2 0c-39.76 0-72-35.82-72-80s32.24-80 72-80 72 35.82 72 80-32.24 80-72 80zM128.5 256c-35.35 0-64 31.34-64 70s28.65 70 64 70 64-31.34 64-70-28.65-70-64-70zm255 0c-35.35 0-64 31.34-64 70s28.65 70 64 70 64-31.34 64-70-28.65-70-64-70z"/>
+  </svg>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <img src="logo.jpg" alt="极酷爪 Paw Scoool Logo" />
+      <span>极酷爪 Paw Scoool</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="events.html">线下赛事</a>
+      <a href="trainer.html">训犬师培训</a>
+      <a href="family.html">亲子课堂</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+          <h1>更懂宠物，也更懂家庭的成长型服务</h1>
+          <p>专注于上海宠物活动与家庭宠物服务。我们提供充满乐趣的周末线下赛事、专业的训犬师培训，以及深入宠物心理与行为的人宠亲子课堂，全方位提升人宠亲密关系。</p>
+          <div class="hero-actions">
+            <a href="#events" class="btn btn-primary">
+              探索精彩活动
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              立即联系
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 线下赛事 -->
+  <section id="events">
+    <div class="container">
+      <h2 class="section-title">城市猎犬竞赛</h2>
+      
+      <div class="event-showcase">
+        <div class="event-info">
+          <h3>释放天性，快乐追逐</h3>
+          <p style="margin-bottom: 24px; color: var(--text-muted); word-break: break-word;">
+            专为城市家庭宠物量身定制的周末线下追逐赛事。在这里，每只小狗都能安全、尽兴地奔跑，释放多余精力。
+          </p>
+          
+          <div class="event-features">
+            <div class="feature-item">
+              <h4>轻松上手 · 公寓也能玩</h4>
+              <p>科学控制强度，专为运动量有限的城市小狗设计，日常住在公寓也能尽情参与。</p>
+            </div>
+            <div class="feature-item">
+              <h4>不同体型 · 都能尽情发挥</h4>
+              <p>娱乐赛难度友好；专业赛按体型严格分组，保障比赛更加公平、精彩。</p>
+            </div>
+            <div class="feature-item">
+              <h4>家长参与 · 无需经验</h4>
+              <p>牵绳即可开跑，我们提供独创教学，让狗狗快速学会自主追逐，享受奔跑乐趣。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 多媒体展示区 -->
+        <div class="media-gallery-section" style="width: 100%; min-width: 0;">
+          
+          <!-- 视频展示（自适应高度，不滑动） -->
+          <div class="video-grid">
+            <div class="video-box">
+              <video src="活动视频.mp4" controls playsinline preload="metadata"></video>
+              <span>▶️ 赛事精彩回顾</span>
+            </div>
+            <div class="video-box">
+              <video src="活动视频2.mp4" controls playsinline preload="metadata"></video>
+              <span>▶️ 场地实况与追逐</span>
+            </div>
+          </div>
+
+        <!-- 照片展示（左右滑动/轮播，展现更多精彩瞬间） -->
+        <div class="image-scroll-wrapper">
+          <div class="image-scroll-container" id="eventsImageCarousel">
+            <div class="image-box">
+              <img src="活动现场图.jpg" onerror="this.style.display='none'" alt="活动全景" />
+              <span>📸 场地全景</span>
+            </div>
+            <div class="image-box">
+              <img src="活动现场图1.jpg" onerror="this.style.display='none'" alt="活动照片1" />
+              <span>📸 赛事现场直击</span>
+            </div>
+            <div class="image-box">
+              <img src="活动现场图2.jpg" onerror="this.style.display='none'" alt="活动照片2" />
+              <span>📸 狗狗奔跑瞬间</span>
+            </div>
+            <div class="image-box">
+              <img src="活动现场图3.jpg" onerror="this.style.display='none'" alt="活动照片3" />
+              <span>📸 家长与狗狗</span>
+            </div>
+            <div class="image-box">
+              <img src="奖花图.jpg" onerror="this.style.display='none'" alt="荣誉与奖花" />
+              <span>🏆 荣誉与奖花</span>
+            </div>
+          </div>
+          <div class="carousel-dots" id="eventsCarouselDots">
+            <!-- 动态生成小圆点 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 培训与课堂 -->
+  <section style="background: #eef5fa;">
+    <div class="container">
+      <h2 class="section-title">专业培训与家庭课堂</h2>
+      
+      <div class="services-grid">
+        <!-- 训犬师培训 -->
+        <div class="service-card" id="trainer">
+          <h3>训犬师培训体系</h3>
+          <div>
+            <span class="tag">国家一级驯导师</span>
+            <span class="tag yellow">白领兼职精选</span>
+          </div>
+          <p>
+            由<strong>国家一级宠物驯导师</strong>亲自坐镇授课。我们传授扎实的“宠物行为”与“宠物心理”理论知识，系统性培养专业的“宠物行为训练”能力。
+          </p>
+          <div class="highlight-box">
+            不仅适合志在深耕宠物行业的人员进阶学习，也为喜爱宠物的群体提供了一个绝佳的技能学习平台。无论是全职转型还是作为白领兼职，都能彰显极高水准的行业专业性。
+          </div>
+        </div>
+
+        <!-- 人宠亲子课堂 -->
+        <div class="service-card" id="family">
+          <h3>人宠亲子课堂</h3>
+          <div>
+            <span class="tag">深耕家庭关系</span>
+            <span class="tag yellow">宠物心理洞察</span>
+          </div>
+          <p>
+            突破传统的机械训练，我们强调<strong>“从家庭关系出发，全面提升与狗狗的亲子关系”</strong>。
+          </p>
+          <div class="highlight-box">
+            我们不仅仅是为了解决“乱叫、爆冲、拆家”等表面问题，更注重帮助主人深度理解宠物心理，从底层逻辑上建立深厚、和谐且充满信任的家庭人宠羁绊。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-content">
+        <h2>上海爪酷科技有限公司</h2>
+        <div class="contact-info" style="flex-direction: column; gap: 12px; align-items: center;">
+          <div>📍 地址：上海市多地覆盖，详情欢迎咨询</div>
+          <div>📱 联系方式：13817735697 刘总（微信同号） | 15021431995 徐总（微信号fjxu95）</div>
+        </div>
+      </div>
+      
+      <!-- 微信公众号二维码 -->
+      <div class="qr-code-section">
+        <div class="qr-placeholder" style="border: none; background: transparent; padding: 0; width: 140px; height: 140px;">
+          <img src="公众号二维码.jpg" alt="公众号二维码" style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px;" />
+        </div>
+        <p>扫码关注公众号</p>
+      </div>
+
+      <div class="copyright">
+        &copy; 2026 上海爪酷科技有限公司. All rights reserved. 专注上海宠物活动与宠物行为训练。
+      </div>
+    </div>
+  </footer>
+
+</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // 轮播图逻辑
+      const container = document.getElementById('eventsImageCarousel');
+      const dotsContainer = document.getElementById('eventsCarouselDots');
+      if (!container || !dotsContainer) return;
+    
+    const boxes = container.querySelectorAll('.image-box');
+    const total = boxes.length;
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    // 创建小圆点
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (i === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => {
+        goToSlide(i);
+        resetAutoPlay();
+      });
+      dotsContainer.appendChild(dot);
+    }
+    const dots = dotsContainer.querySelectorAll('.dot');
+
+    function updateDots(index) {
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    function goToSlide(index) {
+      if (index >= total) index = 0;
+      if (index < 0) index = total - 1;
+      currentIndex = index;
+      
+      const boxWidth = boxes[0].offsetWidth;
+      // 计算滚动位置：考虑到gap和容器中心对齐
+      const scrollPos = boxes[currentIndex].offsetLeft - (container.offsetWidth / 2) + (boxWidth / 2);
+      
+      container.scrollTo({
+        left: scrollPos,
+        behavior: 'smooth'
+      });
+      updateDots(currentIndex);
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(nextSlide, 2000); // 2秒自动轮播
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayInterval);
+      startAutoPlay();
+    }
+
+    // 监听手动滚动以同步小圆点
+    let scrollTimeout;
+    container.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const boxWidth = boxes[0].offsetWidth;
+        const scrollCenter = container.scrollLeft + (container.offsetWidth / 2);
+        
+        let closestIndex = 0;
+        let minDiff = Infinity;
+        
+        boxes.forEach((box, i) => {
+          const boxCenter = box.offsetLeft + (boxWidth / 2);
+          const diff = Math.abs(boxCenter - scrollCenter);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIndex = i;
+          }
+        });
+        
+        if (closestIndex !== currentIndex) {
+          currentIndex = closestIndex;
+          updateDots(currentIndex);
+        }
+      }, 150); // 防抖
+    });
+
+    // 触摸滑动时暂停自动轮播
+    container.addEventListener('touchstart', () => clearInterval(autoPlayInterval), {passive: true});
+    container.addEventListener('touchend', resetAutoPlay);
+    container.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    container.addEventListener('mouseleave', startAutoPlay);
+
+    startAutoPlay();
+  });
+</script>
+</html>
